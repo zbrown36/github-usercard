@@ -147,17 +147,10 @@ const followersArray = [
 
 ];
 
-followersArray.forEach (element => {
+followersArray.forEach(element => {
   axios.get(`https://api.github.com/users/${element}`)
-  then(response => {
-    console.log(response.data)
+  .then(response =>{
+    console.log(response)
     entryPoint.appendChild(gitCard(response.data))
-  })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      // always executed
-  
-    })});
+    
+})})
